@@ -11,11 +11,15 @@
       </div>
     </div>
   </div>
+</div>
+<footer>
   <div class="pagination">
     <button (click)="goToPreviousPage()" [disabled]="currentPage === 1">Page précédente</button>
     <span>Vous etes sur la page : {{ currentPage }}</span>
     <button (click)="goToNextPage()">Page suivante</button>
   </div>
-</div>
+</footer>
+
+
 
 

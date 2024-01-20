@@ -20,7 +20,8 @@
 .pokemon-card {
   width: calc(18% - 20px); /* Ajustez la taille des cartes ici pour 5 cartes par ligne */
   background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border : 1px solid #e0be17;
+  box-shadow: 0 8px 10px rgb(234, 228, 228);
   margin-bottom: 20px;
   border-radius: 15px;
   box-sizing: border-box;
@@ -62,7 +63,7 @@
   padding: 5px 10px;
   cursor: pointer;
   border: none;
-  background-color: #555;
+  background-color: #333;
   color: yellow;
 }
 
