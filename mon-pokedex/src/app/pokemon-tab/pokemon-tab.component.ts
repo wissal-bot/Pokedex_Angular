@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
-import {NgForOf, NgIf, UpperCasePipe} from "@angular/common";
+import {NgClass, NgForOf, NgIf, UpperCasePipe} from "@angular/common";
 import { forkJoin } from 'rxjs';
 @Component({
   selector: 'app-pokemon-tab',
@@ -8,7 +8,8 @@ import { forkJoin } from 'rxjs';
   imports: [
     NgForOf,
     NgIf,
-    UpperCasePipe
+    UpperCasePipe,
+    NgClass
   ],
   templateUrl: './pokemon-tab.component.html',
   styleUrls: ['./pokemon-tab.component.css']
@@ -79,4 +80,51 @@ export class PokemonTabComponent implements OnInit {
   capitalizeFirstLetter(word: string): string {
     return word.charAt(0).toUpperCase() + word.slice(1);
   }
+  // Dans votre composant PokemonTabComponent
+  getTypeColorClass(type: string): string {
+    switch (type.toLowerCase()) {
+      case 'normal':
+        return 'normal-type';
+      case 'grass':
+        return 'grass-type';
+      case 'fire':
+        return 'fire-type';
+      case 'water':
+        return 'water-type';
+      case 'electric':
+        return 'electric-type';
+      case 'ice':
+        return 'ice-type';
+      case 'fighting':
+        return 'fighting-type';
+      case 'poison':
+        return 'poison-type';
+      case 'ground':
+        return 'ground-type';
+      case 'flying':
+        return 'flying-type';
+      case 'psychic':
+        return 'psychic-type';
+      case 'bug':
+        return 'bug-type';
+      case 'rock':
+        return 'rock-type';
+      case 'ghost':
+        return 'ghost-type';
+      case 'dragon':
+        return 'dragon-type';
+      case 'dark':
+        return 'dark-type';
+      case 'steel':
+        return 'steel-type';
+      case 'fairy':
+        return 'fairy-type';
+      case 'stellar':
+        return 'stellar-type';
+      default:
+        return 'default-type';
+    }
+  }
+
+
 }
