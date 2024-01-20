@@ -27,9 +27,11 @@ export class PokemonService {
   // Pagination
   getPokemonListPaginated(page: number, pageSize: number): Observable<any> {
     const offset = (page - 1) * pageSize;
-    const url = `${this.apiUrl}?offset=${offset}&limit=${pageSize}`;
+    const limit = Math.min(pageSize, 100 - offset);
+    const url = `${this.apiUrl}?offset=${offset}&limit=${limit}`;
     return this.http.get(url);
   }
+
 }
 
 

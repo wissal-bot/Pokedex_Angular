@@ -5,12 +5,11 @@
 
 .page-title {
   text-align: center;
-  font-size: 40px;
+  font-size: 36px;
   color: #fdcd15;
   margin-bottom: 20px;
   font-family: 'Press Start 2P', cursive;
 }
-
 
 .pokemon-tab {
   display: flex;
@@ -19,11 +18,12 @@
 }
 
 .pokemon-card {
-  width: 18%;
+  width: calc(18% - 20px); /* Ajustez la taille des cartes ici pour 5 cartes par ligne */
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  border-radius: 20px;
+  border-radius: 15px;
+  box-sizing: border-box;
 }
 
 .pokemon-image {
@@ -36,12 +36,37 @@
 }
 
 .pokemon-name {
-  font-size: 20px;
+  font-size: 12px; /* Réduire la taille du nom */
   margin-bottom: 5px;
 }
 
 .pokemon-types {
-  font-size: 16px;
+  font-size: 10px; /* Réduire la taille des types */
   color: #666;
   margin-top: 5px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color: yellow;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.pagination button,
+.pagination span {
+  margin: 0 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #555;
+  color: yellow;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
