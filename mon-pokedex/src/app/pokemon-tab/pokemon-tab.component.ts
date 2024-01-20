@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
-import {NgForOf, NgIf} from "@angular/common";
+import {NgForOf, NgIf, UpperCasePipe} from "@angular/common";
 import { forkJoin } from 'rxjs';
 @Component({
   selector: 'app-pokemon-tab',
   standalone: true,
   imports: [
     NgForOf,
-    NgIf
+    NgIf,
+    UpperCasePipe
   ],
   templateUrl: './pokemon-tab.component.html',
   styleUrls: ['./pokemon-tab.component.css']
@@ -74,5 +75,8 @@ export class PokemonTabComponent implements OnInit {
     if (this.currentPage < this.totalPages) {
       this.loadPokemonTab(this.currentPage + 1, this.pageSize);
     }
+  }
+  capitalizeFirstLetter(word: string): string {
+    return word.charAt(0).toUpperCase() + word.slice(1);
   }
 }

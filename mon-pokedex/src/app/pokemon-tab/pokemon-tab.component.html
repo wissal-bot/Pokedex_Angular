@@ -5,7 +5,7 @@
     <div *ngFor="let pokemon of pokemonTab" class="pokemon-card">
       <img [src]="getPokemonImage(pokemon.url)" alt="{{ pokemon.name }} Image" class="pokemon-image">
       <div class="pokemon-details">
-        <h2 class="pokemon-name">Nom: {{ pokemon.name }}</h2>
+        <h2 class="pokemon-name">Nom: {{ capitalizeFirstLetter(pokemon.name) }}</h2>
         <p *ngIf="pokemon.types && pokemon.types.length > 0" class="pokemon-types">Type: {{ pokemon.types.join(', ') }}</p>
         <p *ngIf="!pokemon.types || pokemon.types.length === 0" class="pokemon-types">Type: Unknown</p>
       </div>

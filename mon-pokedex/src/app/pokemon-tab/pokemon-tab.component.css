@@ -37,12 +37,14 @@
 }
 
 .pokemon-name {
-  font-size: 12px; /* Réduire la taille du nom */
+  font-size: 18px;
+  font-family: 'Bangers', cursive;
   margin-bottom: 5px;
 }
 
 .pokemon-types {
-  font-size: 10px; /* Réduire la taille des types */
+  font-family: 'Bangers', cursive;
+  font-size: 13px;
   color: #666;
   margin-top: 5px;
 }
