@@ -1,0 +1,47 @@
+.page-container {
+  background-color: #211f1f;
+  padding: 20px;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 40px;
+  color: #fdcd15;
+  margin-bottom: 20px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+
+.pokemon-tab {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.pokemon-card {
+  width: 18%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.pokemon-image {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.pokemon-details {
+  padding: 10px;
+}
+
+.pokemon-name {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.pokemon-types {
+  font-size: 16px;
+  color: #666;
+  margin-top: 5px;
+}

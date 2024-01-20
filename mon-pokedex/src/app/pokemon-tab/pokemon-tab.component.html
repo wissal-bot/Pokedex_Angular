@@ -1,10 +1,14 @@
-<h1> HOURA JE M' AFFICHE ! </h1>
+<div class="page-container">
+  <h1 class="page-title">Pokedex - Angular Project SEA LOCKER</h1>
 
-<p>pokemon-tab works!</p>
-
-<!-- Pokemon TAB HTML -->
-
-<div *ngFor="let pokemon of pokemonTab">
-  {{ pokemon.name }}
+  <div class="pokemon-tab">
+    <div *ngFor="let pokemon of pokemonTab" class="pokemon-card">
+      <img [src]="getPokemonImage(pokemon.url)" alt="{{ pokemon.name }} Image" class="pokemon-image">
+      <div class="pokemon-details">
+        <h2 class="pokemon-name">Nom: {{ pokemon.name }}</h2>
+        <p *ngIf="pokemon.types && pokemon.types.length > 0" class="pokemon-types">Type: {{ pokemon.types.join(', ') }}</p>
+        <p *ngIf="!pokemon.types || pokemon.types.length === 0" class="pokemon-types">Type: Unknown</p>
+      </div>
+    </div>
+  </div>
 </div>
-

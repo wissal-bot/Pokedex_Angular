@@ -23,4 +23,14 @@ export class PokemonService {
     console.log('API URL for Pokémon Details:', url); // Ajout de log
     return this.http.get(url);
   }
+
+  // Pagination
+  getPokemonListPaginated(page: number, pageSize: number): Observable<any> {
+    const offset = (page - 1) * pageSize;
+    const url = `${this.apiUrl}?offset=${offset}&limit=${pageSize}`;
+    return this.http.get(url);
+  }
 }
+
+
+
