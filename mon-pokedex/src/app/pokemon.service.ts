@@ -105,4 +105,8 @@ export class PokemonService {
   capitalizeFirstLetter(word: string): string {
     return word.charAt(0).toUpperCase() + word.slice(1);
   }
+  getPokemonSprites(id: number): Observable<any> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get(url);
+  }
 }

@@ -43,4 +43,14 @@ export class PokemonDetailsComponent implements OnInit {
       this.pokemonTypes = types;
     });
   }
+  getPokemonSprites(id: number): void {
+    this.pokemonService.getPokemonSprites(id).subscribe(
+      (data: any) => {
+        this.pokemonImage = data.sprites.front_default;
+      },
+      (error) => {
+        console.error('Error fetching Pokemon sprites', error);
+      }
+    );
+  }
 }
