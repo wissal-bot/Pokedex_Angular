@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
 import {NgClass, NgForOf, NgIf, UpperCasePipe} from "@angular/common";
 import { forkJoin } from 'rxjs';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-pokemon-tab',
   standalone: true,
@@ -22,7 +23,7 @@ export class PokemonTabComponent implements OnInit {
   totalResults = 100;
   totalPages = Math.ceil(this.totalResults / this.pageSize);
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(private pokemonService: PokemonService, private router: Router) { }
 
   ngOnInit(): void {
     this.loadPokemonTab(this.currentPage, this.pageSize);
@@ -77,6 +78,9 @@ export class PokemonTabComponent implements OnInit {
       this.loadPokemonTab(this.currentPage + 1, this.pageSize);
     }
   }
+  viewPokemonDetails(id: number): void {
+    this.router.navigate(['/pokemon/', id]).then(r => console.log('Navigated to Pokémon Details'));
+  }
   capitalizeFirstLetter(word: string): string {
     return word.charAt(0).toUpperCase() + word.slice(1);
   }
@@ -125,6 +129,9 @@ export class PokemonTabComponent implements OnInit {
         return 'default-type';
     }
   }
+
+
+
 
 
 }

@@ -4,7 +4,7 @@
   </h1>
 
   <div class="pokemon-tab">
-    <div *ngFor="let pokemon of pokemonTab" class="pokemon-card">
+    <div *ngFor="let pokemon of pokemonTab" class="pokemon-card" (click)="viewPokemonDetails(pokemon.id)">
       <img [src]="getPokemonImage(pokemon.url)" alt="{{ pokemon.name }} Image" class="pokemon-image">
       <div class="pokemon-details">
         <h2 class="pokemon-name">{{ capitalizeFirstLetter(pokemon.name) }}</h2>

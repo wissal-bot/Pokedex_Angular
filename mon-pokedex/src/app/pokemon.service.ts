@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {map, Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +29,15 @@ export class PokemonService {
     const offset = (page - 1) * pageSize;
     const limit = Math.min(pageSize, 100 - offset);
     const url = `${this.apiUrl}?offset=${offset}&limit=${limit}`;
-    return this.http.get(url);
+    return this.http.get(url).pipe(
+      map((response: any) => {
+        const pokemonListWithId = response.results.map((pokemon: any, index: number) => ({
+          ...pokemon,
+          id: offset + index + 1 // Calculate the ID based on offset and index
+        }));
+        return { ...response, results: pokemonListWithId };
+      })
+    );
   }
 
 }
