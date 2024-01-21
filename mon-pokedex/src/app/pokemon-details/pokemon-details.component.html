@@ -10,12 +10,23 @@
 
   <div class="giant-card">
     <h2 class="giant-card-title">{{ pokemonService.capitalizeFirstLetter(pokemonDetails.name) }}</h2>
-    <img [src]="pokemonImage" alt="{{ pokemonDetails.name }} Image" class="giant-card-image">
+    <img [src]="pokemonService.getPokemonImage(pokemonDetails.id)" alt="{{ pokemonDetails.name }} Image" class="pokemon-image">
+
     <div *ngIf="pokemonTypes && pokemonTypes.length > 0">
-      <h4>Types:</h4>
       <ul>
         <span *ngFor="let type of pokemonTypes" class="type-badge" [ngClass]="pokemonService.getTypeColorClass(type)">{{ type }}</span>
       </ul>
     </div>
+
+    <!-- Nouvelles informations -->
+    <div>
+      <h4>Poids:</h4>
+      <p>{{ pokemonDetails.weight }} kg</p>
+    </div>
+      <div *ngIf="concatenatedVersions">
+        <h4>Versions de jeux:</h4>
+        <p>{{ concatenatedVersions }}</p>
+      </div>
+
   </div>
 </div>

@@ -19,9 +19,13 @@ export class PokemonService {
 
   // Récupération Détails d'un Pokémon
   getPokemonDetails(id: number): Observable<any> {
-    const url = `${this.apiUrl}/${id}/`;
-    console.log('API URL for Pokémon Details:', url);
+    const url = `${this.apiUrl}/${id}`;
     return this.http.get(url);
+  }
+
+  getPokemonGameIndices(id: number): Observable<any> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get(`${url}/encounters`);
   }
 
   // Pagination
@@ -109,4 +113,6 @@ export class PokemonService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get(url);
   }
+
+
 }

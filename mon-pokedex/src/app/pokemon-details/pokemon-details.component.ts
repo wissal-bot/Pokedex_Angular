@@ -34,7 +34,18 @@ export class PokemonDetailsComponent implements OnInit {
     this.pokemonService.getPokemonDetails(this.pokemonId).subscribe((details: any) => {
       this.pokemonDetails = details;
       this.loadPokemonImageAndTypes();
+      this.concatenateVersions();
     });
+  }
+
+  concatenateVersions(): void {
+    if (this.pokemonDetails.game_indices && this.pokemonDetails.game_indices.length > 0) {
+      this.concatenatedVersions = this.pokemonDetails.game_indices
+        .map((gameIndex: any) => gameIndex.version.name)
+        .join(' / ');
+    } else {
+      this.concatenatedVersions = '';
+    }
   }
 
   loadPokemonImageAndTypes(): void {
@@ -42,7 +53,11 @@ export class PokemonDetailsComponent implements OnInit {
     this.pokemonService.getPokemonTypes(this.pokemonId).subscribe((types: string[]) => {
       this.pokemonTypes = types;
     });
+
+    // Utilisation de la méthode getPokemonSprites
+    this.getPokemonSprites(this.pokemonId);
   }
+
   getPokemonSprites(id: number): void {
     this.pokemonService.getPokemonSprites(id).subscribe(
       (data: any) => {
@@ -53,4 +68,6 @@ export class PokemonDetailsComponent implements OnInit {
       }
     );
   }
+  concatenatedVersions: string = '';
+
 }
