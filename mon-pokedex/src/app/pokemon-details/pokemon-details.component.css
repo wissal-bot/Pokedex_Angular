@@ -11,6 +11,24 @@
   padding: 20px;
 }
 
+button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  padding: 10px 15px;
+  border: 2px solid #0022f5;
+  border-radius: 30px;
+  background-color: yellow;
+  color: #0022f5;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0022f5;
+  color: yellow;
+}
+
 .details-title {
   font-size: 24px;
   margin-bottom: 20px;
