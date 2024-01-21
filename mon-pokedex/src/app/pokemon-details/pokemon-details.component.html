@@ -1,6 +1,13 @@
 <p>pokemon-details works!</p>
-<!-- pokemon-detail.component.html -->
+
 <div *ngIf="pokemonDetails">
   <h1>{{ pokemonDetails.name }}</h1>
+  <img [src]="pokemonImage" alt="{{ pokemonDetails.name }} Image">
+  <div *ngIf="pokemonTypes && pokemonTypes.length > 0">
+    <h3>Types:</h3>
+    <ul>
+      <li *ngFor="let type of pokemonTypes">{{ type }}</li>
+    </ul>
+  </div>
   <!-- Autres détails du Pokémon... -->
 </div>

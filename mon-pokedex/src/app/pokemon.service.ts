@@ -39,7 +39,18 @@ export class PokemonService {
       })
     );
   }
-
+  getPokemonImage(id: number): string {
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
+  }
+  getPokemonTypes(id: number): Observable<string[]> {
+    const url = `${this.apiUrl}/${id}/`;
+    return this.http.get(url).pipe(
+      map((response: any) => {
+        const types = response.types.map((typeSlot: any) => typeSlot.type.name);
+        return types;
+      })
+    );
+  }
 }
 
 
