@@ -1,26 +1,47 @@
-/* pokemon-detail.component.css */
-.pokemon-details-container {
-  background-color: #211f1f;
-  padding: 20px;
-}
 
-.header {
+.details-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
+  z-index: 999;
+}
+
+.details-title {
+  font-size: 24px;
   margin-bottom: 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 40px;
+  color: yellow;
 }
 
-.pokemon-info {
-  display: flex;
-  justify-content: space-between;
+.pokemon-name {
+  color: #0022f5; 
 }
 
-.pokemon-image img {
+.giant-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.giant-card-image {
   max-width: 100%;
-  max-height: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
-.pokemon-details {
-  max-width: 60%; /* Ajustez la largeur selon vos besoins */
+.type-badge {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+
 }
 
-/* Ajoutez d'autres styles au besoin */
+

@@ -1,13 +1,11 @@
-<p>pokemon-details works!</p>
-
-<div *ngIf="pokemonDetails">
-  <h1>{{ pokemonDetails.name }}</h1>
-  <img [src]="pokemonImage" alt="{{ pokemonDetails.name }} Image">
-  <div *ngIf="pokemonTypes && pokemonTypes.length > 0">
-    <h3>Types:</h3>
-    <ul>
-      <li *ngFor="let type of pokemonTypes">{{ type }}</li>
-    </ul>
+<div *ngIf="pokemonDetails" class="details-container">
+  <h1 class="details-title">Détails sur le Pokémon : <span class="pokemon-name">{{ pokemonService.capitalizeFirstLetter(pokemonDetails.name) }}</span></h1>  <div class="giant-card">
+    <img [src]="pokemonImage" alt="{{ pokemonDetails.name }} Image" class="giant-card-image">
+    <div *ngIf="pokemonTypes && pokemonTypes.length > 0">
+      <h3>Types:</h3>
+      <ul>
+        <span *ngFor="let type of pokemonTypes" class="type-badge" [ngClass]="pokemonService.getTypeColorClass(type)">{{ type }}</span>
+      </ul>
+    </div>
   </div>
-  <!-- Autres détails du Pokémon... -->
 </div>

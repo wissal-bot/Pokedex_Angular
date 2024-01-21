@@ -21,7 +21,7 @@ export class PokemonDetailsComponent implements OnInit {
   pokemonImage: string = '';
   pokemonTypes: string[] = [];
 
-  constructor(private route: ActivatedRoute, private pokemonService: PokemonService) {}
+  constructor(private route: ActivatedRoute, protected pokemonService: PokemonService) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {

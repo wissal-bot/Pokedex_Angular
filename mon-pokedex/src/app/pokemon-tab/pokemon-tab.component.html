@@ -5,11 +5,11 @@
 
   <div class="pokemon-tab">
     <div *ngFor="let pokemon of pokemonTab" class="pokemon-card" (click)="viewPokemonDetails(pokemon.id)">
-      <img [src]="getPokemonImage(pokemon.url)" alt="{{ pokemon.name }} Image" class="pokemon-image">
+      <img [src]="pokemonService.getPokemonImage(pokemon.id)" alt="{{ pokemon.name }} Image" class="pokemon-image">
       <div class="pokemon-details">
-        <h2 class="pokemon-name">{{ capitalizeFirstLetter(pokemon.name) }}</h2>
+        <h2 class="pokemon-name">{{ pokemonService.capitalizeFirstLetter(pokemon.name) }}</h2>
         <div *ngIf="pokemon.types && pokemon.types.length > 0" class="pokemon-types">
-          <span *ngFor="let type of pokemon.types" class="type-badge" [ngClass]="type.toLowerCase() + '-type'">{{ type }}</span>
+          <span *ngFor="let type of pokemon.types" class="type-badge" [ngClass]="pokemonService.getTypeColorClass(type)">{{ type }}</span>
         </div>
         <div *ngIf="!pokemon.types || pokemon.types.length === 0" class="pokemon-types">Type: Unknown</div>
       </div>
