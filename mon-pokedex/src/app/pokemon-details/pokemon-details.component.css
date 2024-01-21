@@ -30,10 +30,10 @@
 }
 
 .giant-card {
-  background-color: #f5f5f5;
+  background: linear-gradient(80deg, #eac893, #e79a9a, #9d9eda, #dca2b5);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 10px 20px rgb(236, 217, 217);
   width: 80%;
   margin: 0 auto;
 }

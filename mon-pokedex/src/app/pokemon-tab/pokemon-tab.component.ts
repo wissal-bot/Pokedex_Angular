@@ -52,7 +52,7 @@ export class PokemonTabComponent implements OnInit {
       detailsArray.forEach((details: any, index: number) => {
         this.pokemonTab[index].types = details.types.map((typeSlot: any) => typeSlot.type.name);
         this.pokemonTab[index].image = this.pokemonService.getPokemonImage(this.pokemonTab[index].id);
-        // Ajouter d'autres propriétés au besoin
+
       });
     });
   }

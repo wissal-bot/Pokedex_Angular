@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PokemonService } from '../pokemon.service';
 import {NgClass, NgForOf, NgIf, UpperCasePipe} from "@angular/common";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -21,7 +22,7 @@ export class PokemonDetailsComponent implements OnInit {
   pokemonImage: string = '';
   pokemonTypes: string[] = [];
 
-  constructor(private route: ActivatedRoute, protected pokemonService: PokemonService) {}
+  constructor(private route: ActivatedRoute, protected pokemonService: PokemonService,private router: Router) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -67,6 +68,9 @@ export class PokemonDetailsComponent implements OnInit {
         console.error('Error fetching Pokemon sprites', error);
       }
     );
+  }
+  goToHome(): void {
+    this.router.navigate(['']).then(r => console.log('Navigated to home'));
   }
   concatenatedVersions: string = '';
 
