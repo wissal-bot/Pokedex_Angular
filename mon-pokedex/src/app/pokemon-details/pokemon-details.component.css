@@ -183,3 +183,38 @@ button:hover {
 
 
 
+/* Laptop 1440px */
+@media screen and (min-width: 1301px) and (max-width: 1560px) {
+  .pokemon-card {
+    width: calc(19% - 15px);
+  }
+
+  button {
+    padding: 10px;
+    position: relative;
+    margin-top: 20px;
+  }
+
+  button span {
+    clip-path: inset(50%);
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+  }
+
+  button::before {
+    content: '\2190';
+    font-size: 24px;
+    margin-right: 10px;
+  }
+
+  .giant-card {
+    width: 100%;
+  }
+
+  .details-container img.pokemon-image {
+    max-width: 100%;
+    max-height: auto;
+  }
+}

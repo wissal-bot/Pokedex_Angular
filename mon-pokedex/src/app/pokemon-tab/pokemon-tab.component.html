@@ -19,8 +19,12 @@
 
 <footer>
   <div class="pagination">
-    <button (click)="goToPreviousPage()" [disabled]="currentPage === 1">Page précédente</button>
-    <span>Vous êtes sur la page : {{ currentPage }}</span>
-    <button (click)="goToNextPage()">Page suivante</button>
+    <button class="previous-button" (click)="goToPreviousPage()" [disabled]="currentPage === 1">
+      <img src="./assets/images/pokeball1.png" alt="Page précédente">
+    </button>
+    <span> Page : {{ currentPage }} / 10</span>
+    <button class="next-button" (click)="goToNextPage()">
+      <img src="./assets/images/pokeball2.png" alt="Page suivante">
+    </button>
   </div>
 </footer>

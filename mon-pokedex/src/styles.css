@@ -5,9 +5,12 @@
 
 body {
   font-family: 'Press Start 2P', cursive;
-  background-color: #211f1f;
-}
+  background-image: url('./assets/images/fond.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
+}
 
 .type-badge {
   border-radius: 10px;
