@@ -82,3 +82,38 @@
   cursor: not-allowed;
 }
 
+/* TAB */
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+  .pokemon-card {
+    width: calc(20% - 20px);
+  }
+
+  .page-title img {
+    max-width: 70%;
+    height: auto;
+  }
+
+  .pagination button,
+  .pagination span {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+}
+
+/* Phone */
+@media screen and (max-width: 767px) {
+  .pokemon-card {
+    width: calc(50% - 20px);
+  }
+
+  .page-title img {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .pagination button,
+  .pagination span {
+    padding: 5px 8px;
+    font-size: 5px;
+  }
+}

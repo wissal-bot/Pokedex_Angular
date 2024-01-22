@@ -11,24 +11,6 @@
   padding: 20px;
 }
 
-button {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 10px;
-  padding: 10px 15px;
-  border: 2px solid #0022f5;
-  border-radius: 30px;
-  background-color: yellow;
-  color: #0022f5;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0022f5;
-  color: yellow;
-}
-
 .details-title {
   font-size: 24px;
   margin-bottom: 20px;
@@ -114,4 +96,90 @@ li {
     width: 100%;
   }
 }
+
+button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  padding: 10px 15px;
+  border: 2px solid #0022f5;
+  border-radius: 30px;
+  background-color: yellow;
+  color: #0022f5;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+button:hover {
+  background-color: #0022f5;
+  color: yellow;
+}
+
+/* TAB */
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+  button {
+    padding: 10px;
+    position: relative;
+  }
+
+  button span {
+    clip-path: inset(50%);
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+  }
+
+  button::before {
+    content: '\2190';
+    font-size: 24px;
+    margin-right: 10px;
+  }
+
+  .giant-card {
+    width: 90%;
+  }
+
+  .details-container img.pokemon-image {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+
+
+
+/* Phone */
+@media screen and (max-width: 767px) {
+  button {
+    padding: 10px;
+    position: relative;
+  }
+
+  button span {
+    clip-path: inset(50%);
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+  }
+
+  button::before {
+    content: '\2190';
+    font-size: 24px;
+    margin-right: 10px;
+  }
+
+  .giant-card {
+    width: 100%;
+  }
+
+  .details-container img.pokemon-image {
+    max-width: 100%;
+    max-height: auto;
+  }
+}
+
+
 
