@@ -1,10 +1,26 @@
-<h1> HOURA JE M' AFFICHE ! </h1>
+<div class="page-container">
+  <h1 class="page-title">
+    <img src="./assets/images/Pokedex-Angular-Project-SEA-20-01-2024.png" alt="police-pokemon" border="0">
+  </h1>
 
-<p>pokemon-tab works!</p>
-
-<!-- Pokemon TAB HTML -->
-
-<div *ngFor="let pokemon of pokemonTab">
-  {{ pokemon.name }}
+  <div class="pokemon-tab">
+    <div *ngFor="let pokemon of pokemonTab" class="pokemon-card" (click)="viewPokemonDetails(pokemon.id)">
+      <img [src]="pokemonService.getPokemonImage(pokemon.id)" alt="{{ pokemon.name }} Image" class="pokemon-image">
+      <div class="pokemon-details">
+        <h2 class="pokemon-name">{{ pokemonService.capitalizeFirstLetter(pokemon.name) }}</h2>
+        <div *ngIf="pokemon.types && pokemon.types.length > 0" class="pokemon-types">
+          <span *ngFor="let type of pokemon.types" class="type-badge" [ngClass]="pokemonService.getTypeColorClass(type)">{{ type }}</span>
+        </div>
+        <div *ngIf="!pokemon.types || pokemon.types.length === 0" class="pokemon-types">Type: Unknown</div>
+      </div>
+    </div>
+  </div>
 </div>
 
+<footer>
+  <div class="pagination">
+    <button (click)="goToPreviousPage()" [disabled]="currentPage === 1">Page précédente</button>
+    <span>Vous êtes sur la page : {{ currentPage }}</span>
+    <button (click)="goToNextPage()">Page suivante</button>
+  </div>
+</footer>

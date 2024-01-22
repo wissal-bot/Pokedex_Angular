@@ -1,0 +1,117 @@
+
+.pokemon-name {
+  color: #0022f5;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  padding: 10px 15px;
+  border: 2px solid #0022f5;
+  border-radius: 30px;
+  background-color: yellow;
+  color: #0022f5;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0022f5;
+  color: yellow;
+}
+
+.details-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: yellow;
+
+}
+
+.pokemon-sprites {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.pokemon-sprites img {
+  max-width: 100%;
+  height: auto;
+}
+
+.giant-card {
+  background: linear-gradient(80deg, #eac893, #e79a9a, #9d9eda, #dca2b5);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 10px 20px rgb(236, 217, 217);
+  width: 80%;
+  margin: 0 auto;
+}
+
+.giant-card-title {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.pokemon-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.pokemon-types {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.type-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-right: 6px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+/* Nouvelles informations */
+h4 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+p {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.details-container img.pokemon-image {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .giant-card {
+    width: 100%;
+  }
+}
+

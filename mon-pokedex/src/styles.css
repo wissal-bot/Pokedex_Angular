@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #211f1f;
+}
+
+
+.type-badge {
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin-right: 5px;
+}
+
+.grass-type {
+  background-color: #78c850;
+}
+.bug-type {
+  background-color: #12340b;
+}
+.dark-type {
+  background-color: #110b0b;
+}
+.dragon-type {
+  background-color: #156365;
+}
+.electric-type {
+  background-color: #f8d030;
+}
+.fairy-type {
+  background-color: #ab0b54;
+}
+.fighting-type {
+  background-color: #f14b1b;
+}
+.fire-type {
+  background-color: #fd0303;
+}
+.flying-type {
+  background-color: #9f9fa8;
+}
+.ghost-type {
+  background-color: #504977;
+}
+.ground-type {
+  background-color: #423616;
+}
+.ice-type {
+  background-color: #9bd8d8;
+}
+.normal-type {
+  background-color: #a17483;
+}
+.poison-type {
+  background-color: #7b0b7b;
+}
+.psychic-type {
+  background-color: #f81b8a;
+}
+.rock-type {
+  background-color: #7a5009;
+}
+.steel-type {
+  background-color: #7fa879;
+}
+.water-type {
+  background-color: #0b5394;
+}

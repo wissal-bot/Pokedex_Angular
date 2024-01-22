@@ -1,1 +1,32 @@
-<p>pokemon-details works!</p>
+<div *ngIf="pokemonDetails" class="details-container">
+  <button (click)="goToHome()">Retour à l'accueil</button>
+  <h1 class="details-title">Détails sur le Pokémon : <span class="pokemon-name">{{ pokemonService.capitalizeFirstLetter(pokemonDetails.name) }}</span></h1>
+
+  <div class="pokemon-sprites">
+    <img [src]="pokemonDetails.sprites.front_default" alt="{{ pokemonDetails.name }} Front Default">
+    <img [src]="pokemonDetails.sprites.back_default" alt="{{ pokemonDetails.name }} Back Default">
+    <img [src]="pokemonDetails.sprites.front_shiny" alt="{{ pokemonDetails.name }} Front Shiny">
+    <img [src]="pokemonDetails.sprites.back_shiny" alt="{{ pokemonDetails.name }} Back Shiny">
+  </div>
+
+  <div class="giant-card">
+    <h2 class="giant-card-title">{{ pokemonService.capitalizeFirstLetter(pokemonDetails.name) }}</h2>
+    <img [src]="pokemonService.getPokemonImage(pokemonDetails.id)" alt="{{ pokemonDetails.name }} Image" class="pokemon-image">
+
+    <div *ngIf="pokemonTypes && pokemonTypes.length > 0">
+      <ul>
+        <span *ngFor="let type of pokemonTypes" class="type-badge" [ngClass]="pokemonService.getTypeColorClass(type)">{{ type }}</span>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Poids:</h4>
+      <p>{{ pokemonDetails.weight }} kg</p>
+    </div>
+      <div *ngIf="concatenatedVersions">
+        <h4>Versions de jeux:</h4>
+        <p>{{ concatenatedVersions }}</p>
+      </div>
+
+  </div>
+</div>
