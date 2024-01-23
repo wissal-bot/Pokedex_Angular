@@ -1,5 +1,5 @@
 .pokemon-name {
-  color: #0022f5;
+  color: white;
 }
 
 .details-container {
@@ -20,6 +20,8 @@
   border-radius: 100px;
   background-color: #dddddd;
   margin: 10px;
+  box-shadow: 0 2px 5px 5px rgb(16, 7, 7);
+
 }
 
 .giant-card {
@@ -90,7 +92,7 @@ li {
   border: none;
   padding: 0;
   background-color: transparent;
-  margin-right: 10px;
+  margin-right: 50px;
 }
 
 .normal-image {
@@ -109,11 +111,6 @@ li {
   color: yellow;
   text-align: center;
 }
-
-
-
-
-
 
 
 .details-container img.pokemon-image {
