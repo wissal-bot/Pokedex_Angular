@@ -1,7 +1,10 @@
 <div *ngIf="pokemonDetails" class="details-container">
-  <button (click)="goToHome()">Retour à l'accueil</button>
-  <h1 class="details-title">Détails sur le Pokémon : <span class="pokemon-name">{{ pokemonService.capitalizeFirstLetter(pokemonDetails.name) }}</span></h1>
-
+  <div class="header-container">
+    <button (click)="goToHome()" class="home-button">
+      <img src="./assets/images/gif%20pokemon.gif" alt="Home" class="normal-image">
+    </button>
+    <h1 class="details-title">Détails sur le Pokémon : <span class="pokemon-name">{{ pokemonService.capitalizeFirstLetter(pokemonDetails.name) }}</span></h1>
+  </div>
   <div class="pokemon-sprites">
     <img [src]="pokemonDetails.sprites.front_default" alt="{{ pokemonDetails.name }} Front Default">
     <img [src]="pokemonDetails.sprites.back_default" alt="{{ pokemonDetails.name }} Back Default">

@@ -1,37 +1,30 @@
-
 .pokemon-name {
   color: #0022f5;
 }
 
 .details-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
-  padding: 20px;
-}
-
-.details-title {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: yellow;
-
+  padding: 10px;
+  color: white;
 }
 
 .pokemon-sprites {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .pokemon-sprites img {
   max-width: 100%;
   height: auto;
+  border-radius: 100px;
+  background-color: #dddddd;
+  margin: 10px;
 }
 
 .giant-card {
-  background: linear-gradient(80deg, #eac893, #e79a9a, #9d9eda, #dca2b5);
-  padding: 20px;
+  background-color: #323241;
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0 8px 10px 20px rgb(236, 217, 217);
   width: 80%;
@@ -39,7 +32,7 @@
 }
 
 .giant-card-title {
-  font-size: 34px;
+  font-size: 24px;
   margin-bottom: 10px;
 }
 
@@ -51,7 +44,7 @@
 
 .pokemon-types {
   margin-bottom: 10px;
-  text-align: left;
+  text-align: center;
 }
 
 .type-badge {
@@ -62,15 +55,14 @@
   color: #fff;
 }
 
-/* Nouvelles informations */
 h4 {
-  margin-top: 15px;
+  margin-top: 10px;
   margin-bottom: 5px;
   text-align: left;
 }
 
 p {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   text-align: left;
 }
 
@@ -85,136 +77,68 @@ li {
   text-align: left;
 }
 
-.details-container img.pokemon-image {
-  max-width: 300px;
-  max-height: 300px;
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #323241;
+  border-radius: 50px;
+}
+
+.home-button {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  margin-right: 10px;
+}
+
+.normal-image {
+  max-width: 100px;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+.home-button:hover .normal-image {
+  opacity: 0.5;
+}
+
+.details-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: yellow;
+  text-align: center;
 }
 
 
-@media screen and (max-width: 768px) {
+
+
+
+
+
+.details-container img.pokemon-image {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+@media screen and (max-width: 767px) {
   .giant-card {
     width: 100%;
   }
+
+  .details-container img.pokemon-image {
+    max-width: 100%;
+    max-height: auto;
+  }
 }
 
-button {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 10px;
-  padding: 10px 15px;
-  border: 2px solid #0022f5;
-  border-radius: 30px;
-  background-color: yellow;
-  color: #0022f5;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-button:hover {
-  background-color: #0022f5;
-  color: yellow;
-}
-
-/* TAB */
-@media screen and (min-width: 768px) and (max-width: 1300px) {
-  button {
-    padding: 10px;
-    position: relative;
-  }
-
-  button span {
-    clip-path: inset(50%);
-    clip: rect(1px, 1px, 1px, 1px);
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-  }
-
-  button::before {
-    content: '\2190';
-    font-size: 24px;
-    margin-right: 10px;
-  }
-
+@media screen and (max-width: 576px) {
   .giant-card {
     width: 90%;
   }
 
   .details-container img.pokemon-image {
-    max-width: 200px;
-    max-height: 200px;
-  }
-}
-
-
-
-
-/* Phone */
-@media screen and (max-width: 767px) {
-  button {
-    padding: 10px;
-    position: relative;
-  }
-
-  button span {
-    clip-path: inset(50%);
-    clip: rect(1px, 1px, 1px, 1px);
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-  }
-
-  button::before {
-    content: '\2190';
-    font-size: 24px;
-    margin-right: 10px;
-  }
-
-  .giant-card {
-    width: 100%;
-  }
-
-  .details-container img.pokemon-image {
-    max-width: 100%;
-    max-height: auto;
-  }
-}
-
-
-
-/* Laptop 1440px */
-@media screen and (min-width: 1301px) and (max-width: 1560px) {
-  .pokemon-card {
-    width: calc(19% - 15px);
-  }
-
-  button {
-    padding: 10px;
-    position: relative;
-    margin-top: 20px;
-  }
-
-  button span {
-    clip-path: inset(50%);
-    clip: rect(1px, 1px, 1px, 1px);
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-  }
-
-  button::before {
-    content: '\2190';
-    font-size: 24px;
-    margin-right: 10px;
-  }
-
-  .giant-card {
-    width: 100%;
-  }
-
-  .details-container img.pokemon-image {
-    max-width: 100%;
-    max-height: auto;
+    max-width: 150px;
+    max-height: 150px;
   }
 }
